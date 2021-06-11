@@ -11,8 +11,7 @@ const getWeather = async (zipCode) => {
         const data = await response.json()
         dataDupe = data
 
-        const { forecast: { forecastday: day }, location, current: {last_updated: time} } = data
-        const currentHour = new Date(time)
+        const { forecast: { forecastday: day }, location } = data
 
         // set location text in header
         document.getElementById("location").textContent = `${location.name}, ${location.region}`
@@ -62,8 +61,8 @@ const getWeather = async (zipCode) => {
 
                 // mark current hour with styling
                 if (
-                    currentHour.getHours() === new Date(hour.time).getHours() &&
-                    currentHour.getDate() === new Date(hour.time).getDate()
+                    new Date().getHours() === new Date(hour.time).getHours() &&
+                    new Date().getDate() === new Date(hour.time).getDate()
                    ) {
                     hourDiv.classList.add('current-hour')
                 }
