@@ -17,9 +17,13 @@ h1 {
     text-align: center;
     color: #F7Edf0;
     margin: 0;
-    padding: .5em 0;
+    padding: .5em;
     font-weight: 200;
     position: relative;
+}
+
+nav ul {
+    list-style: none;
 }
 
 a {
@@ -122,6 +126,14 @@ header {
     top: 0;
     background-color: #0e0608;
     z-index: 3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    padding-right: 1em;
 }
 
 main {
